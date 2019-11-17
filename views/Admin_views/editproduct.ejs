@@ -1,0 +1,39 @@
+
+  
+<div class="container " style="margin-top:100px; margin-bottom: 200px;">
+    <div class="pb-3 clearfix">
+        <a href="/Adminlog/logout" class="btn btn-danger float-right">logout</a>
+        <a href="/Adminlog/dashboard" class="btn btn-primary float-right mx-1">Go back to dashboard</a>     
+        </div> 
+<div class="row ">
+    <div class="col-md-6 m-auto">
+            <div class="card card-body">
+         <% include ../partials/messages %>
+      <form action="/Adminlog/update/" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="id" value="<%= records._id%>">
+               <div class="form-group">
+            <label for="productname">Product name</label>
+            <input type="text" name="productname" class="form-control" value="<%= records.pname %>">
+        </div>
+        <div class="form-group">
+            <label for="description">description</label>
+            <input type="text" name="description" class="form-control" value="<%= records.description %>">
+        </div>
+        <div class="form-group">
+            <label for="img">Image</label>
+            <input type="file" name="img" 
+            value="<%= records.image %>">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" name="price" class="form-control" value="<%= records.price %>">
+        </div>
+        <div>
+            <button class="btn btn-primary">Add</button>  
+        <a href="/Adminlog/dashboard" class="btn btn-danger">Go back to dashboard</a>
+        </div>
+    </form>
+        </div> 
+    </div>
+</div>
+</div>

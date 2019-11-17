@@ -1,0 +1,36 @@
+
+
+<div class="container " style="margin-top:100px; margin-bottom: 200px;">
+        <div class="pb-3 clearfix">
+            <a href="/Adminlog/logout" class="btn btn-danger float-right">logout</a>
+            <a href="/Adminlog/dashboard" class="btn btn-primary float-right mx-1">Go back to dashboard</a>    
+            </div> 
+    <div class="table-responsive">
+            
+ 
+         <table class="table table-light alignmiddle">
+       
+       <thead> 
+            <th>name</th>  
+            <th>description</th>  
+            <th>image</th>  
+            <th>price</th>  
+            <th>Edit</th>  
+            <th>Delete</th>  
+       </thead>
+       <% products.forEach(function(prod) { %>
+       <tbody>
+           <tr>
+           <td><%= prod.pname %></td>
+           <td><%= prod.description %></td>
+           <td><img src="../img/<%= prod.image %>" class="img-fluid" width="90px;" alt="image"></td>
+           <td>Rs <%= prod.price %></td>
+           <td><a href="/adminlog/edit/<%= prod.id %>" class=""><i class="fa fa-edit"></i></a></td>
+           <td><a href="/adminlog/delete/<%= prod.id %>" class=""><i class="fa fa-trash"></i></a></td>  
+           </tr>
+       </tbody>
+       <% }) %>
+   </table>
+    </div>
+  
+</div>>
